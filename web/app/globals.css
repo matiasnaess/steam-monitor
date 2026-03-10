@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-steam-dark: #1b2838;
+  --color-steam-darker: #171a21;
+  --color-steam-blue: #1a9fff;
+  --color-steam-blue-dark: #2a475e;
+  --color-steam-card: #16202d;
+  --color-steam-card-hover: #1e2e42;
+  --color-steam-border: #2a3f5f;
+  --color-steam-text: #c6d4df;
+  --color-steam-text-dim: #8f98a0;
+  --color-steam-green: #5ba32b;
+  --color-steam-yellow: #e5c100;
+  --color-steam-red: #c43c35;
+  --color-steam-orange: #cf6a32;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-steam-darker);
+  color: var(--color-steam-text);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-steam-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-steam-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steam-blue-dark);
+}
+
+/* Pulse animation for live indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}

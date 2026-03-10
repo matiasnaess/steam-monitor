@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest web --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(npx create-next-app@latest web --yes --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack)",
+      "Bash(npm install recharts)",
+      "Bash(npm run build)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm --version)",
+      "Bash(npm run dev -- --port 3000)",
+      "Bash(npm run dev)",
+      "Bash(npm run dev -- --port 3001)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 55244 //F)",
+      "Bash(where npx.cmd)",
+      "Bash(where npx)",
+      "Bash(taskkill //PID 58376 //F)",
+      "Bash(node node_modules/next/dist/bin/next --help)"
+    ]
+  }
+}

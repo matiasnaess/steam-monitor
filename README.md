@@ -180,3 +180,40 @@ Available metrics for the `/api/v1/history/:metric` endpoint:
 - `players_dota2` — Dota 2 player count
 - `players_tf2` — TF2 player count
 - `players_deadlock` — Deadlock player count
+
+## Web Dashboard
+
+An example Next.js dashboard is included in the `web/` directory. It connects to the monitor service via WebSocket for real-time updates and displays:
+
+- **Core Services** — Live status cards for Steam Store, Community, Web API, and Connection Managers with response times
+- **Player Counts** — Real-time player counts for CS2, Dota 2, TF2, and Deadlock
+- **Player History** — 48-hour line chart of player counts across all games
+- **Game Servers** — CS2 matchmaking/sessions/inventories/scheduler status, plus Dota 2 and TF2 server health
+- **Connection Managers** — Datacenter-by-datacenter grid showing online/total CM servers globally
+
+### Running the Dashboard
+
+```bash
+# 1. Start the monitor service (from project root)
+npm run dev
+
+# 2. In a separate terminal, start the web app
+cd web
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to view the dashboard. It connects to the monitor API at `http://localhost:3300` by default.
+
+### Preview
+
+![Steam Monitor Dashboard](docs/preview.png)
+
+### Configuration
+
+The dashboard reads two optional environment variables:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEXT_PUBLIC_API_URL` | `http://localhost:3300` | Monitor service REST API base URL |
+| `NEXT_PUBLIC_WS_URL` | `ws://localhost:3300/ws` | Monitor service WebSocket URL |
